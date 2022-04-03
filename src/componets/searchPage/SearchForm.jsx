@@ -23,16 +23,16 @@ const SearchPage = () => {
     dispatch(setInputTextAction(addText));
   };
 
-  const filteredWords = searchOptions.filter((word) => {
-    return result.length > 2 ? word.includes(result) : word = "нет совпадений";
-  });
+  const filteredWords =
+    addText.length > 2
+      ? searchOptions.filter((word) => word.includes(addText))
+      : [];
 
   return (
     <>
       <div>
         <input type="text" placeholder="Search" onChange={handleChange} />
       </div>
-      <span>{result ? result : "no result"}</span>
       <div>
         {filteredWords.map((word, index) => {
           return <Results word={word} key={index} />;
