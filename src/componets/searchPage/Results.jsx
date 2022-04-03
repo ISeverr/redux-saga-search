@@ -1,11 +1,7 @@
 import React from "react";
 
-const Results = ({addText}) => {
-    return (
-        <div>
-            {addText ? addText : 'empty'}
-        </div>
-    )
-}
+const Results = ({ word, index }) => {
+  return <div key={index}>{word}</div>;
+};
 
 export default Results;

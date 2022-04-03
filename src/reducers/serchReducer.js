@@ -1,10 +1,12 @@
 import { createReducer } from "@reduxjs/toolkit";
-import { setInputText } from "../actions/serachAction";
+import { setInputTextAction } from "../actions/serachAction";
 
+const initialState = {
+  searchText: "",
+};
 
-export default createReducer( '', {
-    [setInputText.type]: (text, action) => {
-        const { inputText } = action.payload;
-        return text = inputText;
-    },
-})
+export default createReducer(initialState, {
+  [setInputTextAction]: function(state, action) {
+    state.searchText = action.payload
+  },
+});
